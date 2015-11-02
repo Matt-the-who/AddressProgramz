@@ -27,7 +27,7 @@ namespace AddressProgramz
 
         public void AddressListing(string streetAddress, string city, string province, string postalCode)
         {
-            MessageBox.Show(streetAddress + "\n" + city + "\n" + province + "\n" + postalCode, "Address");
+            MessageBox.Show(streetAddress + "\n" + city + "\n" + province + "\n" + postalCode, "2Address");
         }
 
         public frmAddressProgram()
@@ -54,7 +54,14 @@ namespace AddressProgramz
             province = this.txtProvince.Text;
             postalCode = this.txtPostalCode.Text;
 
-            AddressListing(aptNumber, streetAddress, city, province, postalCode);
+            if (aptNumber == "")
+            {
+                AddressListing(streetAddress, city, province, postalCode);
+            }
+            else {
+                AddressListing(aptNumber, streetAddress, city, province, postalCode);
+            }
+
         }
     }
 }
